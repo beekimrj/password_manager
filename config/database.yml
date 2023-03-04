@@ -1,0 +1,13 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+development:
+  <<: *default
+  url: <%= ENV['POSTGRESS_URL_DEVELOPMENT']%>
+test:
+  <<: *default
+  url: <%= ENV['POSTGRESS_URL_TEST']%>
+production:
+  <<: *default
+  url: <%= ENV['POSTGRESS_URL_PRODUCTION']%>
