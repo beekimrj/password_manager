@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_secure_password
   include AccountManagementConcern
 
+  attr_accessor :current_password
+
   before_save :downcase_email
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, on: :create }, uniqueness: { case_sensitive: false }
 

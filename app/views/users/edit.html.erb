@@ -1,0 +1,20 @@
+<%= form_with model: @user, url: account_path, method: :put do |form| %>
+  <%= render partial: 'shared/form_errors', locals: { object: form.object } %>
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email, disabled: true %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password, required: true %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, required: true %>
+  </div>
+  <div>
+    <%= form.label :current_password, 'Current password (We need your current password to confirm your changes)' %>
+    <%= form.password_field :current_password, required: true %>
+  </div>
+  <%= form.submit "Update Account" %>
+<% end %>
