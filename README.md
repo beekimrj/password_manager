@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Project is saving passwords of different sites so that passwords can be managed easily. This Project will also ensure that passwords are saved in encrypted formats and even front-end will get encrypted passwords which will be decrypted in secure way.
 
-Things you may want to cover:
+Requirements:
+* Ruby version\
+  `3.1.2`
 
-* Ruby version
+* Setup\
+  Run:
+  - `bundle install`
 
-* System dependencies
+* Database creation\
+  Clone .env.sample and rename it to .env file, update db credentials according to your local system configuration
 
-* Configuration
+* Database initialization\
+  Run:\
+  `rails db:setup`
 
-* Database creation
+* How to run the test suite\
+  Currently, there is no specs. But Rspec will be added
 
-* Database initialization
+* Services (job queues, cache servers, search engines, etc.)\
+  There is no any services
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+References:\
+**For Authentication** \
+- [rails authentication from scratch, Jan 03, 2022](https://stevepolito.design/blog/rails-authentication-from-scratch)
