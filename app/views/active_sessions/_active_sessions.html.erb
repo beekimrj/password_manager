@@ -1,0 +1,23 @@
+<% if active_sessions.any? %>
+  <%= button_to "Log out of all sessions", destroy_all_active_sessions_path, method: :delete %>
+  <table>
+    <thead>
+      <tr>
+        <th>User Agent</th>
+        <th>IP Address</th>
+        <th>Signed In At</th>
+        <th>Signed Out</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% active_sessions.each do |active_session| %>
+        <tr>
+          <td><%= active_session.user_agent %></td>
+          <td><%= active_session.ip_address %></td>
+          <td><%= active_session.created_at %></td>
+          <td><%= button_to "Sign out", active_session_path(active_session), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

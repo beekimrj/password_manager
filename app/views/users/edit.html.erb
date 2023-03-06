@@ -18,3 +18,6 @@
   </div>
   <%= form.submit "Update Account" %>
 <% end %>
+
+<h2>Current Logins</h2>
+<%= render partial: 'active_sessions/active_sessions', locals: { active_sessions: @active_sessions } %>
