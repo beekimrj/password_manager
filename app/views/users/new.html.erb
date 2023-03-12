@@ -1,16 +1,22 @@
-<%= form_with model: @user, url: sign_up_path do |form| %>
-  <%= render partial: 'shared/form_errors', locals: { object: form.object } %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
-  </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, required: true %>
-  </div>
-  <%= form.submit "Sign up" %>
-<% end %>
+<div class="form_container">
+  <%= form_with model: @user, url: sign_up_path, html: {class: 'form_section'} do |form| %>
+    <h1 class= 'form_title'> Sign Up </h1>
+    <%= render partial: 'shared/form_errors', locals: { object: form.object } %>
+    <div class="input_container">
+      <%= form.email_field :email, required: true, class: 'input_field', placeholder: 'john.doe@example.com' %>
+      <%= form.label :email, class: 'input_label' %>
+    </div>
+    <div class="input_container">
+      <%= form.password_field :password, required: true, class: 'input_field', placeholder: '*******', minlength: 8, maxlength: 25 %>
+      <%= form.label :password, class: 'input_label' %>
+    </div>
+    <div class="input_container">
+      <%= form.password_field :password_confirmation, required: true, class: 'input_field', placeholder: '*******', minlength: 8, maxlength: 25  %>
+      <%= form.label :password_confirmation, class: 'input_label' %>
+    </div>
+    <div class="form_footer">
+      <%= link_to 'Back', root_path, class: 'cancel_btn' %>
+      <%= form.submit "Sign up", class: 'submit_btn' %>
+    </div>
+  <% end %>
+</div>

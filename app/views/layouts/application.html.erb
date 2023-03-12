@@ -11,8 +11,10 @@
   </head>
 
   <body>
-    <%= render partial: 'shared/flash_messages' %>
-    <%= render partial: 'shared/header' %>
-    <%= yield %>
+    <div class="main_container">
+      <%= render partial: 'shared/flash_messages' %>
+      <%= render partial: 'shared/header' %>
+      <%= yield %>
+    </div>
   </body>
 </html>
