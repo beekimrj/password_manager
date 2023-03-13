@@ -1,5 +1,14 @@
-<h1>Reset Password</h1>
-<%= form_with url: passwords_path, scope: :user do |form| %>
-  <%= form.email_field :email, required: true %>
-  <%= form.submit "Reset Password" %>
-<% end %>
+<div class="form_container">
+  <%= form_with url: passwords_path, scope: :user, html: {class: 'form_section'} do |form| %>
+    <h1 class= 'form_title_with_info'> Reset Password </h1>
+    <p class='form_info'> Insert email you used for sign up. </p>
+    <div class="input_container">
+      <%= form.email_field :email, required: true, class: 'input_field', placeholder: 'john.doe@example.com' %>
+      <%= form.label :email, class: 'input_label' %>
+    </div>
+    <div class="form_footer">
+      <%= link_to 'Back', root_path, class: 'cancel_btn' %>
+      <%= form.submit "Reset Password", class: 'submit_btn' %>
+    </div>
+  <% end %>
+</div>

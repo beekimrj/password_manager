@@ -24,6 +24,16 @@
       margin-bottom: 50px;
     }
 
+    .form_title_with_info {
+      @extend .form_title;
+      margin-bottom: 0;
+    }
+
+    .form_info {
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
+
     .input_container {
       position: relative;
       height: 45px;
