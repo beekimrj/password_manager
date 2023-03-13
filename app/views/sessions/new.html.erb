@@ -1,18 +1,24 @@
-<%= form_with url: login_path, scope: :user do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
-  </div>
-  <div>
-    <%= form.label :remember_me %>
-    <%= form.check_box :remember_me %>
-  </div>
-  <div>
-    <%= link_to 'Forgot password?', new_password_path  %>
-  </div>
-  <%= form.submit 'Sign In' %>
-<% end %>
+<div class="form_container">
+  <%= form_with url: login_path, scope: :user, html: {class: 'form_section'} do |form| %>
+    <h1 class= 'form_title'> Login </h1>
+    <div class="input_container">
+      <%= form.email_field :email, required: true, class: 'input_field', placeholder: 'your@email.com' %>
+      <%= form.label :email, class: 'input_label' %>
+    </div>
+    <div class="input_container">
+      <%= form.password_field :password, required: true, class: 'input_field', placeholder: '*******', minlength: 8, maxlength: 25 %>
+      <%= form.label :password, class: 'input_label' %>
+    </div>
+    <div class="form_options">
+      <span class="form_remember_me">
+        <%= form.check_box :remember_me %>
+        <%= form.label :remember_me %>
+      </span>
+      <%= link_to 'Forgot password?', new_password_path  %>
+    </div>
+    <div class="form_footer">
+      <%= link_to 'Back', root_path, class: 'cancel_btn' %>
+      <%= form.submit "Login", class: 'submit_btn' %>
+    </div>
+  <% end %>
+</div>

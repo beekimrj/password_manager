@@ -58,6 +58,15 @@
       }
     }
 
+    .form_options {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .form_remember_me {
+        margin-bottom: 5px;
+      }
+    }
+
     .form_footer {
       display: inline-flex;
       justify-content: space-between;
