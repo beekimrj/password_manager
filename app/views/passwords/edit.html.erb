@@ -1,12 +1,17 @@
-<h1>Reset Passwords</h1>
-<%= form_with url: password_path(params[:password_reset_token]), scope: :user, method: :put do |form| %>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
-  </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, required: true %>
-  </div>
-  <%= form.submit 'Update Password' %>
-<% end %>
+<div class="form_container">
+  <%= form_with url: password_path(params[:password_reset_token]), scope: :user, method: :put, html: {class: 'form_section'} do |form| %>
+    <h1 class= 'form_title'> Reset Password </h1>
+    <div class="input_container">
+      <%= form.password_field :password, required: true, class: 'input_field', placeholder: '*******', minlength: 8, maxlength: 25 %>
+      <%= form.label :password, class: 'input_label' %>
+    </div>
+    <div class="input_container">
+      <%= form.password_field :password_confirmation, required: true, class: 'input_field', placeholder: '*******', minlength: 8, maxlength: 25  %>
+      <%= form.label :password_confirmation, class: 'input_label' %>
+    </div>
+    <div class="form_footer">
+      <%= link_to 'Back', root_path, class: 'cancel_btn' %>
+      <%= form.submit "Reset Password", class: 'submit_btn' %>
+    </div>
+  <% end %>
+</div>
