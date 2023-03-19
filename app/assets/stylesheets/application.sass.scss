@@ -1,5 +1,7 @@
 // Entry point for your Sass build
 @import "forms";
+@import "homepage";
+@import "common";
 
 body{
 	margin: 0;
@@ -7,6 +9,7 @@ body{
 	box-sizing: border-box;
 	background-color: white;
 	font-family: "lato", sans-serif;
+	min-height: 100vh;
 };
 
 * {

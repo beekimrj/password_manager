@@ -1,0 +1,62 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: blue;
+  height: 60px;
+
+  .nav_menus {
+    display: flex;
+
+    li {
+      margin-left: 20px;
+    }
+  }
+
+  .account_menus {
+    display: flex;
+
+    li {
+      margin-right: 15px;
+    }
+  }
+
+  li {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  color: white;
+  // bottom: 0;
+  // position: absolute;
+  // width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+
+    a {
+      color: white;
+    }
+  }
+
+  .footer_company_info {
+    width: 20px;
+  }
+
+  .footer_social {
+    h4 {
+      margin: 0 0 5px 0;
+    }
+  }
+}

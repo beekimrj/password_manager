@@ -1,1 +1,35 @@
-<h1>Home Page</h1>
+<div class="homepage_container">
+  <header>
+    <div class="hero_image_container">
+      <div class="hero_image_text">
+        <h1> Password Manager </h1>
+        <p class="hero_image_details"> Different Sites, Different Password, Managed in one portal!!!</p>
+        <% if Current.user.blank? %>
+          <%= link_to 'Start Now', sign_up_path, class: 'button' %>
+        <% end %>
+      </div>
+    </div>
+  </header>
+  <div class="homepage_contains">
+    <section class="homepage_contains-top">
+      <p>Imagine where you could control all your passwords in one place so that you don't have to go through pressuring you memory
+      to recall password. Going through your notes book to wonder if you have saved there.Going through hectic process of password reset.
+      Using same password in all sites so that you won't forget your password.</p>
+
+      <p>
+        Well, well, well. We all have been through that phase. Now here is your solution to password management system.
+        you can save all your password with extra notes in one place in all secure encrypted format.
+      </p>
+      <p>
+        You can save your credentials and share within your family/teams.
+      </p>
+    </section>
+    <section class="homepage_contains-low">
+      <h1> How it works </h1>
+      <p>
+        All credentials are encrypted in database as well as end-to-end encrypted. Once you login, you need set master password to
+        view all decrypt passwords.
+      </p>
+    </section>
+  </div>
+</div>

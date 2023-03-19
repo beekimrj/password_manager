@@ -1,8 +1,16 @@
-<% if current_user %>
-  <%= link_to 'Home', root_path %>
-  <%= link_to 'Update account', account_path %>
-  <%= button_to 'Log out', logout_path, method: :delete %>
-<% else %>
-  <%= link_to 'Login', login_path %>
-  <%= link_to 'Sign Up', sign_up_path %>
-<% end %>
+<nav>
+  <ul class="nav_menus">
+    <li><%= link_to 'Home', root_path %> </li>
+    <li><%= link_to 'FAQ', root_path %> </li>
+    <li><%= link_to 'About Us', root_path %> </li>
+  </ul>
+  <ul class="account_menus">
+    <% if current_user %>
+      <li><%= link_to 'Update account', account_path %> </li>
+      <li><%= button_to 'Log out', logout_path, method: :delete %> </li>
+    <% else %>
+      <li><%= link_to 'Login', login_path %></li>
+      <li><%= link_to 'Sign Up', sign_up_path %></li>
+    <% end %>
+  </ul>
+</nav>
