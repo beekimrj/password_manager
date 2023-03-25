@@ -1,35 +1,33 @@
-<div class="flash__box">
-  <% if flash[:notice] %>
-    <div class="flash flash-notice">
-      <p>
-        <small>
-          <a class="close" style="cursor:pointer;"> x </a> <%= flash[:notice] %>
-        </small>
-      </p>
-    </div>
-  <% elsif flash[:success] %>
-    <div class="flash flash-success">
-      <p>
-        <small>
-          <a class="close" style="cursor:pointer;"> x </a> <%= flash[:success] %>
-        </small>
-      </p>
-    </div>
-  <% elsif flash[:error] %>
-    <div class="flash flash-error">
-      <p>
-        <small>
-          <a class="close" style="cursor:pointer;"> x </a> <%= flash[:error] %>
-        </small>
-      </p>
-    </div>
-  <% elsif flash[:warning] %>
-    <div class="flash flash-info">
-      <p>
-        <small>
-          <a class="close" style="cursor:pointer;"> x </a> <%= flash[:warning] %>
-        </small>
-      </p>
-    </div>
-  <% end %>
-</div>
+<% if flash.present? %>
+  <div class="flash_box js_flash_box">
+    <% if flash[:notice] %>
+      <div class="flash flash-notice">
+        <p>
+          <%= flash[:notice] %>
+        </p>
+      </div>
+    <% elsif flash[:success] %>
+      <div class="flash flash-success">
+        <p>
+          <%= flash[:success] %>
+        </p>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="flash flash-error">
+        <p>
+          <%= flash[:error] %>
+        </p>
+      </div>
+    <% elsif flash[:warning] %>
+      <div class="flash flash-info">
+        <p>
+          <%= flash[:warning] %>
+        </p>
+      </div>
+    <% end %>
+
+    <a class="flash_close_btn js_flash_close_btn">
+      <p> x </p>
+    </a>
+  </div>
+<% end %>
