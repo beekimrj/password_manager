@@ -11,7 +11,7 @@ gem 'turbo-rails'
 gem 'stimulus-rails'
 gem 'cssbundling-rails'
 gem 'jbuilder'
-gem 'dotenv-rails'
+# gem 'dotenv-rails'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

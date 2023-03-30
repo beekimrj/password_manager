@@ -4,10 +4,10 @@ default: &default
   pool: 5
 development:
   <<: *default
-  url: <%= ENV['POSTGRESS_URL_DEVELOPMENT']%>
+  url: <%= Rails.application.credentials[:postgres_database][:development_url] %>
 test:
   <<: *default
-  url: <%= ENV['POSTGRESS_URL_TEST']%>
+  url: <%= Rails.application.credentials[:postgres_database][:test_url]%>
 production:
   <<: *default
-  url: <%= ENV['POSTGRESS_URL_PRODUCTION']%>
+  url: <%= Rails.application.credentials[:postgres_database][:production_url] %>
