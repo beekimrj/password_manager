@@ -1,0 +1,33 @@
+<% if @entries.blank? %>
+  <p>No Records found, <%= link_to "Click here", new_entry_path %> to create a entry.</p>
+<% else %>
+  <div class="entries_container">
+    <% @entries.each do |entry| %>
+      <div class="entries_line_item">
+        <div class="entries_header">
+          <%= entry.title %>
+        </div>
+        <div class="entries_content">
+          <div class="entry_content-url">
+            URL:- <%= entry.url %>
+          </div>
+          <div class="entry_content-username">
+            Username/Email:- <%= entry.username %>
+          </div>
+          <div class="entry_content-password">
+            Password:- <%= entry.password %>
+          </div>
+        </div>
+        <div class="entries_actions">
+          <div class="entries_action-edit">
+            <%= link_to "Edit" , edit_entry_path(entry)%>
+          </div>
+          <div class="entries_action-delete">
+            <%= button_to "Delete", entry_path(entry), method: :delete %>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

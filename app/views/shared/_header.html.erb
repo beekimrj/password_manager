@@ -1,11 +1,13 @@
 <nav>
+  <% unless user_signed_in? %>
   <ul class="nav_menus">
     <li><%= link_to 'Home', root_path %> </li>
     <li><%= link_to 'FAQ', root_path %> </li>
     <li><%= link_to 'About Us', root_path %> </li>
   </ul>
+  <% end %>
   <ul class="account_menus">
-    <% if current_user %>
+    <% if user_signed_in? %>
       <li><%= link_to 'Update account', account_path %> </li>
       <li><%= button_to 'Log out', logout_path, method: :delete %> </li>
     <% else %>
